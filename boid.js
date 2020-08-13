@@ -24,7 +24,8 @@ class Boid{
 
     flock(boids){
         this.acceleration.mult(0);
-        let perception = 100;
+        let perception = sizeSlider.value();
+        //console.log(perception)
         let close = boids.filter(other => {
             return p5.Vector.dist(this.position, other.position) < perception
                 && other !== this;
